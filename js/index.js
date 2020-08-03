@@ -113,6 +113,25 @@ contactPs[2].textContent = siteContent["contact"]["email"]
 const footer = document.querySelector("footer p")
 footer.textContent = siteContent["footer"]["copyright"]
 
+//add new content
+
+let navText = Array.from(document.querySelectorAll("a"))
+navText.forEach(item => item.classList.add("green"))
+console.log(navText)
+
+const postNav = document.createElement("a")
+const preNav = document.createElement("a")
+postNav.textContent = "Post-Contact"
+preNav.textContent = "Pre-Services"
+postNav.href = "#"
+preNav.href = "#"
+// postNav.classList.add("green")
+// preNav.classList.add("green")
+const nav = document.querySelector("nav")
+nav.appendChild(postNav)
+nav.prepend(preNav)
+
+
 
 //make a giant forEach of the siteContent that runs through a paired array of all the selectors...
 //  <del>FOOTER:try skipping the const & just dumping the json straight in</del>
